@@ -7,6 +7,8 @@ import cobbleDisp from "../../static/textures/cobble/grassy_cobblestone_disp_1k.
 import cobbleMask from "../../static/textures/cobble/grassy_cobblestone_mask_1k.png";
 import earth from "../../static/textures/earth/earth.jpg";
 
+import star from "../../static/textures/particles/2.png";
+
 const woodTexture = textureLoader.load(woodImage);
 woodTexture.colorSpace = THREE.SRGBColorSpace;
 
@@ -20,10 +22,13 @@ const cobbleMaskTexture = textureLoader.load(cobbleMask);
 const earthTexture = textureLoader.load(earth);
 earthTexture.colorSpace = THREE.SRGBColorSpace;
 
+const starTexture = textureLoader.load(star);
+
 export {
   woodTexture,
   cobbleDiffTexture,
   cobbleDispTexture,
   cobbleMaskTexture,
   earthTexture,
+  starTexture,
 };

@@ -1,5 +1,10 @@
 import * as THREE from "three";
-import { cobbleDiffTexture, earthTexture, woodTexture } from "./textures";
+import {
+  cobbleDiffTexture,
+  earthTexture,
+  starTexture,
+  woodTexture,
+} from "./textures";
 const cubeMaterial = new THREE.MeshStandardMaterial({
   map: woodTexture,
 });
@@ -26,4 +31,20 @@ const earthMaterial = new THREE.MeshStandardMaterial({
   map: earthTexture,
 });
 
-export { cubeMaterial, floorMaterial, normalMaterial, earthMaterial };
+const particlesMaterial = new THREE.PointsMaterial({
+  size: 0.1,
+  sizeAttenuation: true,
+  alphaMap: starTexture,
+  transparent: true,
+  depthWrite: false,
+  blending: THREE.AdditiveBlending,
+  vertexColors: true,
+});
+
+export {
+  cubeMaterial,
+  floorMaterial,
+  normalMaterial,
+  earthMaterial,
+  particlesMaterial,
+};

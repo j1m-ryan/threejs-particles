@@ -13,27 +13,31 @@ import {
   hemisphereLightHelper,
 } from "./helpers/lightHelpers";
 import { directionalLightShadowCameraHelper } from "./helpers/shadowCameraHelpers";
+import points from "./points/particles";
 
 function main() {
   // Meshes
-  scene.add(cube);
-  scene.add(sphere);
-  scene.add(torus);
-  scene.add(floor);
+  // scene.add(cube);
+  // scene.add(sphere);
+  // scene.add(torus);
+  // scene.add(floor);
+
+  // Points
+  scene.add(points);
 
   // Lights
-  scene.add(ambientLight);
-  scene.add(hemisphereLight);
+  // scene.add(ambientLight);
+  // scene.add(hemisphereLight);
   scene.add(directionalLight);
 
   // Helpers
-  scene.add(axesHelper);
-  scene.add(hemisphereLightHelper);
-  scene.add(directionalLightHelper);
-  scene.add(directionalLightShadowCameraHelper);
+  // scene.add(axesHelper);
+  // scene.add(hemisphereLightHelper);
+  // scene.add(directionalLightHelper);
+  // scene.add(directionalLightShadowCameraHelper);
 
   // EventListeners
-  createDoubleClickListener(canvas);
+  // createDoubleClickListener(canvas
 
   tick();
 }

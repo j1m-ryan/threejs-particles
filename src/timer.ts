@@ -8,6 +8,7 @@ import camera from "./camera";
 import scene from "./scene";
 import controls from "./controls";
 import stats from "./utils/stats";
+import particles, { particlesCount } from "./points/particles";
 
 const timer = new Timer();
 
@@ -28,6 +29,18 @@ export const tick = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
 
+  for (let i = 0; i < particlesCount; i++) {
+    const xIdx = i * 3;
+    const yIdx = i * 3 + 1;
+    const zIdx = i * 3 + 2;
+
+    const x = particles.geometry.attributes.position.array[xIdx];
+    particles.geometry.attributes.position.array[yIdx] = Math.sin(
+      elapsedTime + x
+    );
+  }
+
+  particles.geometry.attributes.position.needsUpdate = true;
   renderer.render(scene, camera);
   controls.update();
   stats.end();
